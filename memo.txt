@@ -1,0 +1,58 @@
+### Bootstrapping
+1. Create a new project  
+  $ meteor create whatsapp  
+  $ cd whatsapp  
+
+1. Add the iOS platform  
+  $ meteor add-platform ios  
+
+1. Replace Blaze (Meteor's default templating engine) with AngularJS's template engine  
+  $ meteor remove blaze-html-templates  
+  $ meteor add angular-templates  
+
+1. Install Ionic with its dependencies  
+  $ meteor add dab0mb:ionic-assets  
+  $ meteor npm install angular@^1.5.8 --save  
+  $ meteor npm install angular-animate@^1.5.8 --save  
+  $ meteor npm install angular-sanitize@^1.5.8 --save  
+  $ meteor npm install angular-ui-router@^0.3.1 --save  
+  $ meteor npm install ionic-scripts --save  
+  $ meteor npm install babel-runtime --save  
+
+  $ meteor add mobile-status-bar
+  $ meteor add launch-screen
+
+1. Install angular-meteor  
+  $ meteor npm install angular-meteor --save  
+
+
+### Layout, coding style & structure
+1. Remove unnecessary files  
+  $ rm -rf server client  
+
+1. Creating the project’s folder structure  
+  - client (client side with AngularJS and Ionic code)
+    - scripts
+    - templates
+    - styles
+    - index.html
+  - server (server side code only)
+  - public (assets, images)
+  - lib (define methods and collections in order to make them available in both client and server)
+
+1. Creating Meteor's main html file, the index.html which will be placed under the client folder  
+  - Use some ionic tags to achieve mobile style
+    - ion-nav-bar : Create a navigation bar in the page header.
+    - ion-nav-view : This is a placeholder to the real content. AngularJS and Ionic will put your content inside this tag automatically.
+
+1. Create the AngularJS module and bootstrap it according to our platform  
+  1. Add app.js file  
+    $ mkdir ./client/scripts/lib  
+    $ touch ./client/scripts/lib/app.js  
+  1. Create main app file  
+
+1. Install angular-ecmascript npm package for using es6's new class system  
+  $ meteor npm install angular-ecmascript --save
+
+1. Define routes and states with angular-ui-router (which is included by Ionic)  
+  - 
